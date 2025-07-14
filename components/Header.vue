@@ -23,9 +23,10 @@
           <h2 class="text-base font-semibold text-[#334EAC] italic text-center">Close</h2>
         </div>
         <div class="flex flex-col gap-5">
-          <NuxtLink class="text-base font-bold uppercase text-[#334EAC] hover:uderline" to="/project">Project</NuxtLink>
-          <NuxtLink class="text-base font-bold uppercase text-[#334EAC]" to="/about">About</NuxtLink>
-          <NuxtLink class="text-base font-bold uppercase text-[#334EAC]" to="/contact">Contact</NuxtLink>
+          <NuxtLink class="text-base font-bold uppercase text-[#334EAC]" to="/" :class="{'hidden' : route.path === '/', 'inline' : route.path === !'/'}" @click="open = !open">Home</NuxtLink>
+          <NuxtLink class="text-base font-bold uppercase text-[#334EAC]" to="/project" :class="{'hidden' : route.path === '/project', 'inline' : route.path === !'/project'}" @click="open = !open">Project</NuxtLink>
+          <NuxtLink class="text-base font-bold uppercase text-[#334EAC]" to="/about" :class="{'hidden' : route.path === '/about', 'inline' : route.path === !'/about'}" @click="open = !open">About</NuxtLink>
+          <NuxtLink class="text-base font-bold uppercase text-[#334EAC]" to="/contact" :class="{'hidden' : route.path === '/contact', 'inline' : route.path === !'/contact'}" @click="open = !open">Contact</NuxtLink>
         </div>
         <div class="flex gap-3 mt-5">
           <h6 class="text-sm text-[#334EAC] underline">Instagram</h6>
@@ -40,6 +41,7 @@
 <script  setup>
 import { NuxtLink } from '#components';
 
+const route = useRoute()
 const open = ref(false);
 const time = ref('');
 
