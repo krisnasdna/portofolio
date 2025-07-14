@@ -1,0 +1,13 @@
+
+/* @font-face {
+font-family: 'Cooper Hewitt';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/cooper-hewitt@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/cooper-hewitt@latest/latin-400-normal.woff) format('woff');
+} */
+body{
+    font-family: 'Cooper Hewitt', sans-serif;
+    font-weight: 400;
+    background-color: #FFF9EF;
+}
