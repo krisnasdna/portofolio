@@ -1,9 +1,9 @@
 <template>
-  <div class="mx-[80px] my-0">
-    <h1 class="text-[230px] font-[900] text-[#334EAC] uppercase leading-none">Want to know more?</h1>
-    <h2 class="text-[28px] font-semibold uppercase text-center mt-60">Let me take you behind the code.</h2>
-    <div class="grid grid-cols-2 justify-start mt-60">
-      <div class="justify-self-start mt-14">
+  <div class="mx-5 lg:mx-[80px] my-0">
+    <h1 class="text-[92px] lg:text-[230px] font-[900] text-[#334EAC] uppercase leading-none ">Want to know more?</h1>
+    <h2 class="text-[28px]  font-semibold uppercase text-center lg:mt-60 mt-20">Let me take you behind the code.</h2>
+    <div class="grid lg:grid-cols-2 grid-cols-1 justify-start mt-60">
+      <div class="justify-self-start row-start-2 lg:row-start-auto">
         <img src="~/assets/image/karakter.gif" alt="icon">
       </div>
       <div class="flex flex-col gap-10">

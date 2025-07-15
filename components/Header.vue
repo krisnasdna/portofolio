@@ -1,21 +1,21 @@
 <template>
-  <div class="flex flex-row justify-between items-center mt-6 mx-[80px]">
+  <div class="flex flex-row justify-between items-center mt-6 mx-5 lg:mx-[80px]">
     <div class="flex flex-row items-center justify-center gap-4">
       <div>
-        <img src="~/assets/image/icon.png" alt="icon" class="w-10 h-10">
+        <img src="~/assets/image/icon.png" alt="icon" class="lg:w-10 lg:h-10 w-8 h-8">
       </div>
       <div>
-        <h6 class="text-base italic">
+        <h6 class="text-base text-[14px] italic">
         Open for any <br>
         collaboration and offers 
         </h6>
       </div>
     </div>
-    <div class="justify-self-center">
+    <div class="justify-self-center hidden lg:inline">
       <h6 class="text-base italic">Indonesia ( {{ time }})</h6>
     </div>
     <div class="relative">
-      <button class="px-8 py-1 border border-[#334EAC] rounded-xl" @click="open = !open">
+      <button class="px-4 lg:px-8 py-1 border border-[#334EAC] rounded-xl" @click="open = !open">
         <h6 class="text-base font-semibold italic">Menu</h6>
       </button>
       <div class="absolute w-68 bg-[#BAD6EB] origin-top-right right-0 top-0 rounded-xl px-3 py-3" v-if="open">
