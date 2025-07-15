@@ -1,11 +1,11 @@
 <template>
   <div class="flex flex-row justify-between items-center mt-6 mx-5 lg:mx-[80px]">
-    <div class="flex flex-row items-center justify-center gap-4">
+    <div class="flex flex-row items-center justify-center gap-3 lg:gap-4">
       <div>
         <img src="~/assets/image/icon.png" alt="icon" class="lg:w-10 lg:h-10 w-8 h-8">
       </div>
       <div>
-        <h6 class="text-base text-[14px] italic">
+        <h6 class="text-base text-xs italic">
         Open for any <br>
         collaboration and offers 
         </h6>
