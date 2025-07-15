@@ -5,7 +5,7 @@
         <img src="~/assets/image/icon.png" alt="icon" class="lg:w-10 lg:h-10 w-8 h-8">
       </div>
       <div>
-        <h6 class="text-base text-xs italic">
+        <h6 class="lg:text-base text-xs italic">
         Open for any <br>
         collaboration and offers 
         </h6>

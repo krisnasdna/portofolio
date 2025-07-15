@@ -7,8 +7,8 @@
         <img src="~/assets/image/karakter.gif" alt="icon">
       </div>
       <div class="flex flex-col gap-10">
-          <h2 class="lg:text-[28px] text-base italic font-medium text-[#334EAC] text-justify">Hi, I’m Krisna — a tech enthusiast with a passion for front-end development and web  design. I recently graduated with a degree in Information Technology, and now I spend most of my time turning ideas into engaging web experiences.</h2>
-          <h2 class="lg:text-[28px] text-base italic font-medium text-[#334EAC] text-justify">Outside of design and development, I’m also exploring about  AI and IoT — because I believe the future of the web goes far beyond just screens. I’m always learning, always building, and always up for a challenge.</h2>
+          <h2 class="lg:text-[28px] text-base italic font-medium text-[#334EAC] text-justify lg:leading-[1.2]">Hi, I’m Krisna — a tech enthusiast with a passion for front-end development and web  design. I recently graduated with a degree in Information Technology, and now I spend most of my time turning ideas into engaging web experiences.</h2>
+          <h2 class="lg:text-[28px] text-base italic font-medium text-[#334EAC] text-justify lg:leading-[1.2]">Outside of design and development, I’m also exploring about  AI and IoT — because I believe the future of the web goes far beyond just screens. I’m always learning, always building, and always up for a challenge.</h2>
       </div>
     </div>
   </div>
