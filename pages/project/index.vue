@@ -8,7 +8,7 @@
         </h2>
       </div>
       <div class="justify-self-center lg:mt-2 ">
-        <img src="~/assets/image/project.png" alt="icon">
+        <NuxtLink to="/project/1"><img src="~/assets/image/cover-amed.png" alt="icon"></NuxtLink>
       </div>
       <div class="flex flex-col justify-center items-center text-center gap-10">
           <h2 class="text-base font-medium uppercase">passionate about creating <br> unforgettable and beautiful <br> digital experiences.</h2>
