@@ -1,6 +1,9 @@
 <template>
   <div class="mx-5 lg:mx-[80px] my-0 lg:overflow-hidden ">
-    <RevealText class="text-[80px] lg:text-[230px] font-[900] text-[#334EAC] uppercase leading-none text-center">Krisna Sedana</RevealText>
+     <div class="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-2">
+        <RevealText class="text-[68px] lg:text-[230px] font-[900] text-[#334EAC] uppercase leading-none text-center"><span class="block lg:inline">Krisna</span></RevealText>
+        <RevealText class="text-[68px] lg:text-[230px] font-[900] text-[#334EAC] uppercase leading-none text-center"><span class="block lg:inline">Sedana</span></RevealText>
+    </div>
     <div class="grid lg:grid-cols-3 grid-cols-1 justify-center items-center h-full mt-10 ">
       <div class="flex flex-col justify-center items-center text-center gap-10 reveal">
         <div >
@@ -35,11 +38,12 @@ onMounted(()=>{
     autoAlpha: 0,
     opacity: 0,
     duration: 1.2,
-    ease: 'power3.out',
+    ease: 'sine.out',
     stagger: 0.3,
     delay: 0.2,
   })
-})
+});
+
 </script>
 
 <style>
