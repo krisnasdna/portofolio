@@ -11,3 +11,8 @@ body{
     font-weight: 400;
     background-color: #FFF9EF;
 }
+
+.line{
+  display: inline-block;
+  text-align: justify;
+}
