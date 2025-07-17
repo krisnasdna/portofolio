@@ -3,5 +3,6 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', '@nuxt/fonts', '@nuxt/icon'],
-  css: ['~/assets/css/main.css']
+  css: ['~/assets/css/main.css'],
+  plugins: ['~/plugins/gsap.client.ts']
 })
