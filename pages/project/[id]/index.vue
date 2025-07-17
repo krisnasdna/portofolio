@@ -15,9 +15,9 @@
       </div>
 
       <!-- Desktop Heading -->
-      <div class="hidden lg:flex justify-between items-end px-5 lg:px-20 mt-40">
+      <div class="hidden lg:flex justify-between items-end px-5 lg:px-20 pt-[600px]">
         <NuxtLink to="https://amedturtlesnorkeling.com" class="underline text-base">Visit Website</NuxtLink>
-        <h1 class="text-5xl font-extrabold text-[#334EAC] uppercase leading-none text-center">
+        <h1 class="text-[68px] font-extrabold text-[#334EAC] uppercase leading-none text-center">
           Amed Turtle Snorkeling Trips
         </h1>
         <p class="font-bold uppercase text-[#334EAC] text-base">@2025</p>
