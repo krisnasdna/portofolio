@@ -22,7 +22,9 @@
 </template>
 
 <script setup>
-
+definePageMeta({
+ title: 'CONTACT'
+});
 </script>
 
 <style>

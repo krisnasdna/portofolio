@@ -5,20 +5,20 @@
         <img src="~/assets/image/icon.png" alt="icon" class="lg:w-10 lg:h-10 w-8 h-8">
       </div>
       <div>
-        <h6 class="lg:text-base text-xs italic">
+        <HeaderText class="lg:text-base text-xs italic">
         Open for any <br>
         collaboration and offers 
-        </h6>
+        </HeaderText>
       </div>
     </div>
     <div class="justify-self-center hidden lg:inline">
-      <h6 class="text-base italic">Indonesia ( {{ time }})</h6>
+      <HeaderText class="text-base italic">Indonesia ( {{ time }})</HeaderText>
     </div>
     <div class="relative">
-      <button class="px-4 lg:px-8 py-1 border border-[#334EAC] rounded-xl" @click="open = !open">
-        <h6 class="text-base font-semibold italic">Menu</h6>
+      <button class="px-4 lg:px-8  border border-[#334EAC] rounded-xl" @click="open = !open">
+        <HeaderText class="text-base font-semibold italic mt-2">Menu</HeaderText>
       </button>
-      <div class="absolute w-68 bg-[#BAD6EB] origin-top-right right-0 top-0 rounded-xl px-3 py-3" v-if="open">
+      <div class="absolute w-68 bg-[#BAD6EB] origin-top-right right-0 top-0 rounded-xl px-3 py-3 z-10" v-if="open">
         <div class="flex justify-end items-center gap-2 cursor-pointer me-4" @click="open = !open">
           <h2 class="text-base font-semibold text-[#334EAC] italic text-center">Close</h2>
         </div>
@@ -40,10 +40,14 @@
 
 <script  setup>
 import { NuxtLink } from '#components';
+import gsap from 'gsap'
+import { SplitText } from "gsap/SplitText";
+gsap.registerPlugin(SplitText);
 
 const route = useRoute()
 const open = ref(false);
 const time = ref('');
+const textRef = ref()
 
 onMounted(() => {
   setInterval(() => {
@@ -52,7 +56,28 @@ onMounted(() => {
       hour12: true
     })
   }, 1000)
+
+  const split = SplitText.create(textRef.value, {
+    type: 'chars',
+    charsClass: 'char-span'
+  })
+
+  gsap.set(split.chars, {
+    yPercent: -100,
+    opacity: 0,
+  })
+
+  gsap.to(split.chars, {
+    yPercent: 0,
+    opacity: 1,
+    duration: 1.2,
+    ease: 'power3.out',
+    stagger: 0.05,
+    delay: 0.2,
+  })
+
 }); 
+
 
 </script>
 

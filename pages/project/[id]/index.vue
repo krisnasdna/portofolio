@@ -64,7 +64,9 @@
 </template>
 
 <script setup>
-
+definePageMeta({
+ title: 'PROJECT DETAIL'
+});
 </script>
 
 <style lang="scss" scoped>
