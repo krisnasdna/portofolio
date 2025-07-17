@@ -39,10 +39,7 @@
 </template>
 
 <script  setup>
-import { NuxtLink } from '#components';
-import gsap from 'gsap'
-import { SplitText } from "gsap/SplitText";
-gsap.registerPlugin(SplitText);
+const { $gsap, $ScrollTrigger, $SplitText } = useNuxtApp()
 
 const route = useRoute()
 const open = ref(false);
@@ -57,17 +54,17 @@ onMounted(() => {
     })
   }, 1000)
 
-  const split = SplitText.create(textRef.value, {
+  const split = $SplitText.create(textRef.value, {
     type: 'chars',
     charsClass: 'char-span'
   })
 
-  gsap.set(split.chars, {
+  $gsap.set(split.chars, {
     yPercent: -100,
     opacity: 0,
   })
 
-  gsap.to(split.chars, {
+  $gsap.to(split.chars, {
     yPercent: 0,
     opacity: 1,
     duration: 1.2,
@@ -75,7 +72,6 @@ onMounted(() => {
     stagger: 0.05,
     delay: 0.2,
   })
-
 }); 
 
 

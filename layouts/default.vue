@@ -7,9 +7,9 @@
 </template>
 
 <script setup>
-import gsap from 'gsap'
+const { $gsap } = useNuxtApp()
 onMounted(()=>{
-  gsap.from('.reveal',{
+  $gsap.from('.reveal',{
     autoAlpha: 0,
     opacity: 0,
     duration: 1,
@@ -17,7 +17,8 @@ onMounted(()=>{
     stagger: 0.3,
     delay: 0.2,
   })
-})
+});
+
 </script>
 
 

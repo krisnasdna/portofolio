@@ -15,71 +15,71 @@
 </template>
 
 <script setup>
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { SplitText } from "gsap/SplitText";
+const { $gsap, $ScrollTrigger, $SplitText } = useNuxtApp()
+
 definePageMeta({
  title: 'ABOUT'
 });
+
+const route = useRoute()
 const animatedText1 = ref(null)
 const animatedText2 = ref(null)
 
+const animateTextSequentially = () => {
+  $ScrollTrigger.getAll().forEach(t => t.kill())
+  $gsap.killTweensOf("*")
+
+  const split1 = $SplitText.create(animatedText1.value, { 
+    type: 'lines',
+    linesClass: "line",
+    mask: "lines"
+  })
+
+  const split2 = $SplitText.create(animatedText2.value, { 
+    type: 'lines',
+    linesClass: "line",
+    mask: "lines"
+  })
+
+  const tl = $gsap.timeline({
+    scrollTrigger: {
+      trigger: animatedText1.value,
+      start: 'top 90%',
+      toggleActions: 'restart none none none',
+    },
+  })
+
+  tl.from(split1.lines, {
+    duration: 1,
+    yPercent: 100,
+    opacity: 0,
+    stagger: 0.2,
+    ease: "expo.out",
+  })
+  .to(split1.lines, { opacity: 1 }, '<')
+  .from(split2.lines, {
+    duration: 1,
+    yPercent: 100,
+    opacity: 0,
+    stagger: 0.1,
+    ease: "expo.out",
+  }, '+=0.1')
+
+  $ScrollTrigger.refresh()
+}
 
 onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger)
-
-  // Fungsi animasi untuk teks per karakter
-  const animateTextSequentially = () => {
-    const split1 = SplitText.create(animatedText1.value, 
-    { 
-      types: 'lines', 
-      linesClass: "line",
-      autoSplit: true,
-      mask: "lines", 
-    })
-    const split2 = SplitText.create(animatedText2.value, 
-    {  
-      types: 'lines', 
-      linesClass: "line",
-      autoSplit: true,
-      mask: "lines", 
-    })
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: animatedText1.value,
-        start: 'top 90%',
-        toggleActions: 'restart none none none',
-        once: false,
-        markers:false
-      },
-    })
-
-    tl.from(split1.lines, {
-      duration: 1,
-      yPercent: 100,
-      opacity: 0,
-      stagger: 0.2,
-      ease: "expo.out",
-    })
-      .to(split1.lines, { opacity: 1 }, '<') // jaga-jaga biar opacity konsisten
-      .from(
-        split2.lines,
-        {
-          duration: 1,
-          yPercent: 100,
-          opacity: 0,
-          stagger: 0.1,
-          ease: "expo.out", 
-        },
-        '+=0.1' // jeda setelah animasi pertama selesai
-      )
-  }
-
-  animateTextSequentially()
+ nextTick(() => {
+    animateTextSequentially()
+  })
 });
+
 
 </script>
 
 <style>
-
+.line{
+  text-align: justify;
+  display: inline-block;
+}
 </style>

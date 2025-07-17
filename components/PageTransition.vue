@@ -5,17 +5,15 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import gsap from 'gsap'
-import { useRouter } from 'vue-router'
+const { $gsap } = useNuxtApp()
 
 const overlay = ref(null)
 const loadingText = ref(null)
 const router = useRouter()
 
 onMounted(() => {
-  gsap.set(overlay.value, { y: '100%' })
-  gsap.set(loadingText.value, { opacity: 0, y: 20 })
+  $gsap.set(overlay.value, { y: '100%' })
+  $gsap.set(loadingText.value, { opacity: 0, y: 20 })
 })
 
 router.beforeEach(async (to, from, next) => {
@@ -30,7 +28,7 @@ router.afterEach(() => {
 function playIn() {
   return new Promise((resolve) => {
     document.body.style.overflow = 'hidden'
-    const tl = gsap.timeline({ onComplete: resolve })
+    const tl = $gsap.timeline({ onComplete: resolve })
     tl.to(overlay.value, {
       y: 0,
       duration: 0.8,
@@ -47,11 +45,11 @@ function playIn() {
 }
 
 function playOut() {
-  const tl = gsap.timeline({
+  const tl = $gsap.timeline({
     onComplete: () => {
       document.body.style.overflow = ''
-      gsap.set(overlay.value, { y: '100%' })
-      gsap.set(loadingText.value, { opacity: 0, y: 20 })
+      $gsap.set(overlay.value, { y: '100%' })
+      $gsap.set(loadingText.value, { opacity: 0, y: 20 })
     },
   })
   tl.to(loadingText.value, {

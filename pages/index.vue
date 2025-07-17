@@ -24,14 +24,14 @@
 </template>
 
 <script setup>
-import gsap from 'gsap'
+const { $gsap } = useNuxtApp()
 
 definePageMeta({
  title: 'HOME'
 });
 
 onMounted(()=>{
-  gsap.from('.reveal',{
+  $gsap.from('.reveal',{
     autoAlpha: 0,
     opacity: 0,
     duration: 1.2,

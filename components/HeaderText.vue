@@ -5,16 +5,16 @@
 </template>
 
 <script setup>
-import gsap from 'gsap'
+const { $gsap } = useNuxtApp()
 
 const textRef = ref()
 
 onMounted(() => {
-  gsap.set(textRef.value, {
+  $gsap.set(textRef.value, {
     opacity: 0,
   })
 
-  gsap.to(textRef.value, {
+  $gsap.to(textRef.value, {
     opacity: 1,
     duration: 1,
     ease: 'power3.out',
