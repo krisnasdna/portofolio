@@ -1,11 +1,10 @@
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { SplitText } from 'gsap/SplitText'
-import { ScrollSmoother } from "gsap/ScrollSmoother"
-import { Draggable } from "gsap/Draggable"
+import { ScrollSmoother } from 'gsap/ScrollSmoother'
 
 export default defineNuxtPlugin(() => {
-  gsap.registerPlugin(ScrollTrigger, SplitText,ScrollSmoother,Draggable)
+  gsap.registerPlugin(ScrollTrigger,SplitText,ScrollSmoother)
 
   // Optional: Inject ke context agar bisa digunakan global
   return {
@@ -14,7 +13,6 @@ export default defineNuxtPlugin(() => {
       ScrollTrigger,
       SplitText,
       ScrollSmoother,
-      Draggable
     }
   }
 })
