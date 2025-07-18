@@ -1,5 +1,5 @@
 <template>
-  <div class="grid lg:grid-cols-3 grid-cols-1 justify-center items-center max-h-screen gap-10 lg:gap-0 my-10">
+  <div class="grid lg:grid-cols-3 grid-cols-1 justify-center items-center lg:max-h-screen gap-10 lg:gap-0 my-10">
       <div class="flex flex-col justify-center items-center text-center gap-10 ">
           <h2 class="text-base font-medium uppercase reveal">
             Krisna (he/him) is an FronT-End <br> Developer & Web Designer from <br>indonesia
@@ -25,9 +25,9 @@
           <div
             v-for="(item, index) in clonedItems"
             :key="index"
-            class="min-w-full max-h-full h-full flex-shrink-0 flex justify-center items-center h-64 text-3xl font-bold"
+            class="min-w-full lg:flex-shrink-0 flex justify-center items-center text-3xl font-bold"
           >
-          <NuxtLink class="no-drag" draggable="false"  @click.prevent="hasDragged ? null : navigateTo(`/project/${item.id}`)"><img :src="item.cover" :alt="item.title" class="w-full h-full object-fill no-drag" draggable="false"></NuxtLink>
+          <NuxtLink class="no-drag" draggable="false"  @click.prevent="hasDragged ? null : navigateTo(`/project/${item.id}`)"><img :src="item.cover" :alt="item.title" class="w-full h-auto lg:object-fill no-drag" draggable="false"></NuxtLink>
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@ import { ref, onMounted, watch, nextTick } from 'vue'
 const props = defineProps({
   items: Array
 })
-console.log(props?.items)
+
 const originalItems = props?.items
 const clonedItems = ref([])
 const currentIndex = ref(1)
