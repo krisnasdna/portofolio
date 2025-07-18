@@ -7,17 +7,7 @@
 </template>
 
 <script setup>
-const { $gsap } = useNuxtApp()
-onMounted(()=>{
-  $gsap.from('.reveal',{
-    autoAlpha: 0,
-    opacity: 0,
-    duration: 1,
-    ease: 'power3.out',
-    stagger: 0.3,
-    delay: 0.2,
-  })
-});
+
 
 </script>
 

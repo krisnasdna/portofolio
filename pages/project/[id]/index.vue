@@ -18,15 +18,15 @@
       <div class="hidden lg:flex justify-between items-end px-5 lg:px-20 pt-[600px]">
         <NuxtLink to="https://amedturtlesnorkeling.com" class="underline text-base">Visit Website</NuxtLink>
         <h1 class="text-[68px] font-extrabold text-[#334EAC] uppercase leading-none text-center">
-          Amed Turtle Snorkeling Trips
+          {{ projects.title }}
         </h1>
-        <p class="font-bold uppercase text-[#334EAC] text-base">@2025</p>
+        <p class="font-bold uppercase text-[#334EAC] text-base">@{{ projects.year }}</p>
       </div>
 
       <!-- Parallax Hero Image -->
       <div class="relative w-full h-screen overflow-hidden my-10">
         <img
-          src="~/assets/image/amed-thum.png"
+          :src="projects.thumbnail"
           alt="thumb"
           class="object-cover w-full h-full"
           data-speed="0.5"
@@ -38,36 +38,26 @@
         <h2 class="text-2xl lg:text-3xl font-extrabold text-[#334EAC] uppercase">Project Overview</h2>
         <div class="flex flex-col gap-8 text-sm lg:text-base">
           <p class="text-justify">
-            I designed and developed the official website for Amed Turtle Snorkeling Trip, a local snorkeling tour provider based in Amed, Bali. The project involved crafting a modern, responsive website that highlights their eco-tourism experience through vibrant visuals and a smooth user interface.
+           {{ projects.description }}
           </p>
           <div class="flex justify-between border-b border-black py-2">
             <h3 class="uppercase font-semibold">Project Type</h3>
-            <h3 class="uppercase font-semibold">Digital Product</h3>
+            <h3 class="uppercase font-semibold">{{ projects.type }}</h3>
           </div>
           <div class="flex justify-between border-b border-black py-2">
             <h3 class="uppercase font-semibold">Service</h3>
-            <div class="text-right">
-              <p class="uppercase font-semibold">UI Design</p>
-              <p class="uppercase font-semibold">Web Development</p>
+            <div class="text-right flex flex-col gap-4">
+              <p class="uppercase font-semibold" v-for="(service, index ) in projects.services" :key="index">{{ service }}</p>
             </div>
           </div>
           <div class="flex justify-between border-b border-black py-2">
             <h3 class="uppercase font-semibold">Year</h3>
-            <h3 class="uppercase font-semibold">2025</h3>
+            <h3 class="uppercase font-semibold">{{ projects.year }}</h3>
           </div>
         </div>
       </div>
-      <div class="relative w-full h-full">
-        <img src="~/assets/image/mockup_amed.png" alt="mockup" class="w-full h-full" />
-      </div>
-      <div class="relative w-full h-full">
-        <img src="~/assets/image/amed-full.png" alt="full" class="w-full h-full" />
-      </div>
-      <div class=" relative w-full h-auto mb-20">
-        <img src="~/assets/image/mobile-amed.png" alt="mobile" class="w-full h-auto" />
-      </div>
-      <div class="mt-20">
-        adwadwaawd
+      <div class="relative w-full h-full" v-for="(result, index) in projects.screenshots" :key="index">
+        <img :src="result" alt="mockup" class="w-full h-full" />
       </div>
     </div>
   </div>
@@ -75,6 +65,8 @@
 
 <script setup>
 const { $gsap, $ScrollSmoother, $SplitText } = useNuxtApp()
+const route = useRoute()
+const { data:projects } = await useFetch(`/api/portofolio/${route.params.id}`)
 
 onMounted(() => {
   // Init ScrollSmoother
