@@ -25,16 +25,18 @@
           <div
             v-for="(item, index) in clonedItems"
             :key="index"
-            class="min-w-full lg:flex-shrink-0 flex justify-center items-center text-3xl font-bold "
+            class="min-w-full lg:flex-shrink-0 flex justify-center items-center text-3xl font-bold spect-square w-full h-full"
           >
           <NuxtLink class="no-drag cursor-pointer" draggable="false"  @click.prevent="hasDragged ? null : navigateTo(`/project/${item.id}`)"> 
-            <NuxtImg
-              :src="item.cover"
-              format="webp"
-              :alt="item.title"
-              class="w-full h-full lg:object-fill no-drag lg:grayscale lg:hover:grayscale-0"
-              draggable="false"
-            />
+             <NuxtImg
+                :src="item.cover"
+                format="webp"
+                :alt="item.title"
+                :width="1200"
+                :height="1200"
+                class="object-cover no-drag lg:grayscale lg:hover:grayscale-0"
+                draggable="false"
+              />
           </NuxtLink>
           </div>
         </div>
@@ -67,17 +69,40 @@ const hasDragged = ref(false)
 const getSlideWidth = () => carousel.value?.offsetWidth || 0
 
 
-onMounted(() => {
+onMounted(async () => {
+
   clonedItems.value = [
-    originalItems[originalItems.length - 1], 
+    originalItems[originalItems.length - 1],
     ...originalItems,
-    originalItems[0] 
+    originalItems[0]
   ]
-  nextTick(() => {
-    goToSlide(currentIndex.value)
-    window.addEventListener('resize', () => goToSlide(currentIndex.value))
-  })
+
+  await nextTick()
+
+  await waitForElementSize()
+
+
+  forceReflow(carousel.value)
+
+  goToSlide(currentIndex.value)
+  window.addEventListener('resize', () => goToSlide(currentIndex.value))
 })
+
+
+const waitForElementSize = async () => {
+  let tries = 0
+  while ((getSlideWidth() < 100) && tries < 20) {
+    await new Promise((r) => setTimeout(r, 50))
+    tries++
+  }
+}
+
+const forceReflow = (el) => {
+  if (!el) return
+  el.style.display = 'none'
+  el.offsetHeight 
+  el.style.display = ''
+}
 
 const goToSlide = (index, smooth = true) => {
   const width = getSlideWidth()
@@ -98,7 +123,7 @@ const onDragMove = (e) => {
   translateX.value = -currentIndex.value * getSlideWidth() + currentDrag.value
 
   if (Math.abs(currentDrag.value) > 5) {
-    hasDragged.value = true // mark as drag
+    hasDragged.value = true 
   }
 }
 
@@ -138,7 +163,9 @@ watch(currentIndex, async (i) => {
   }
 })
 
-
+watchEffect(() => {
+  console.log('Slide width:', getSlideWidth())
+})
 const waitTransition = () => new Promise((r) => setTimeout(r, 310));
 </script>
 
