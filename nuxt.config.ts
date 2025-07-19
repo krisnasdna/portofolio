@@ -1,6 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-
+  app: {
+    head: {
+      title: 'Krisna Sedana', 
+      htmlAttrs: {
+        lang: 'en',
+      },
+      link: [
+        { rel: 'icon', type: 'image/png', href: 'images/icon.png' },
+      ]
+    }
+  },
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
   modules: [
@@ -8,7 +18,8 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/icon',
     '@prisma/nuxt',
-    '@nuxtjs/supabase'
+    '@nuxtjs/supabase',
+    '@nuxt/image'
   ],
   vite: {
     resolve: {
@@ -21,5 +32,9 @@ export default defineNuxtConfig({
     redirect: false
   },
   css: ['~/assets/css/main.css'],
-  plugins:  [{ src: '~/plugins/gsap.client.ts', mode: 'client' }]
+  plugins:  [{ src: '~/plugins/gsap.client.ts', mode: 'client' }],
+  image:{
+    provider: 'ipx',
+    domains: ['rfcfvfmaambenbhulpqd.supabase.co'],
+  },
 })

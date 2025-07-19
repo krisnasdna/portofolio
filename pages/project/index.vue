@@ -14,8 +14,9 @@
 const { $gsap } = useNuxtApp()
 
 definePageMeta({
- title: 'PROJECT'
-});
+  title: 'PROJECT'
+})
+
 const {data: items} = await useFetch('/api/portofolio')
 
 onMounted(async () => {
@@ -28,7 +29,8 @@ onMounted(async () => {
     stagger: 0.3,
     delay: 0.2,
   })
-})
+});
+
 </script>
 
 <style>

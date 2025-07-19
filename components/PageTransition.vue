@@ -28,7 +28,11 @@ router.afterEach(() => {
 function playIn() {
   return new Promise((resolve) => {
     document.body.style.overflow = 'hidden'
-    const tl = $gsap.timeline({ onComplete: resolve })
+
+    const tl = $gsap.timeline({
+      onComplete: resolve
+    })
+
     tl.to(overlay.value, {
       y: 0,
       duration: 0.8,
@@ -40,7 +44,6 @@ function playIn() {
       duration: 0.6,
       ease: 'power2.out',
     }, '-=0.4')
-    .to({}, { duration: 1 }) 
   })
 }
 

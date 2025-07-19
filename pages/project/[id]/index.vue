@@ -25,10 +25,11 @@
 
       <!-- Parallax Hero Image -->
       <div class="relative w-full h-screen overflow-hidden my-10">
-        <img
+        <NuxtImg
           :src="projects.thumbnail"
-          alt="thumb"
-          class="object-cover w-full h-full"
+          format="webp"
+          alt="Thubmnail"
+          class="w-full h-full object-cover"
           data-speed="0.5"
         />
       </div>
@@ -37,9 +38,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 px-5 lg:px-20 my-20">
         <h2 class="text-2xl lg:text-3xl font-extrabold text-[#334EAC] uppercase">Project Overview</h2>
         <div class="flex flex-col gap-8 text-sm lg:text-base">
-          <p class="text-justify">
-           {{ projects.description }}
-          </p>
+          <p class="text-justify" v-text="projects.description"></p>
           <div class="flex justify-between border-b border-black py-2">
             <h3 class="uppercase font-semibold">Project Type</h3>
             <h3 class="uppercase font-semibold">{{ projects.type }}</h3>
@@ -57,7 +56,12 @@
         </div>
       </div>
       <div class="relative w-full h-full" v-for="(result, index) in projects.screenshots" :key="index">
-        <img :src="result" alt="mockup" class="w-full h-full" />
+        <NuxtImg
+          :src="result"
+          format="webp"
+          alt="Result"
+          class="w-full h-auto object-cover"
+        />
       </div>
     </div>
   </div>
@@ -66,7 +70,7 @@
 <script setup>
 const { $gsap, $ScrollSmoother, $SplitText } = useNuxtApp()
 const route = useRoute()
-const { data:projects } = await useFetch(`/api/portofolio/${route.params.id}`)
+const { data:projects, pending } = await useFetch(`/api/portofolio/${route.params.id}`)
 
 onMounted(() => {
   // Init ScrollSmoother

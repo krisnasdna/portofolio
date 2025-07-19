@@ -2,7 +2,7 @@
   <div class="grid lg:grid-cols-3 grid-cols-1 justify-center items-center lg:max-h-screen gap-10 lg:gap-0 my-10">
       <div class="flex flex-col justify-center items-center text-center gap-10 ">
           <h2 class="text-base font-medium uppercase reveal">
-            Krisna (he/him) is an FronT-End <br> Developer & Web Designer from <br>indonesia
+            selected projects <br> I have done 
           </h2>
       </div>
       <div
@@ -25,14 +25,22 @@
           <div
             v-for="(item, index) in clonedItems"
             :key="index"
-            class="min-w-full lg:flex-shrink-0 flex justify-center items-center text-3xl font-bold"
+            class="min-w-full lg:flex-shrink-0 flex justify-center items-center text-3xl font-bold "
           >
-          <NuxtLink class="no-drag" draggable="false"  @click.prevent="hasDragged ? null : navigateTo(`/project/${item.id}`)"><img :src="item.cover" :alt="item.title" class="w-full h-auto lg:object-fill no-drag" draggable="false"></NuxtLink>
+          <NuxtLink class="no-drag cursor-pointer" draggable="false"  @click.prevent="hasDragged ? null : navigateTo(`/project/${item.id}`)"> 
+            <NuxtImg
+              :src="item.cover"
+              format="webp"
+              :alt="item.title"
+              class="w-full h-full lg:object-fill no-drag lg:grayscale lg:hover:grayscale-0"
+              draggable="false"
+            />
+          </NuxtLink>
           </div>
         </div>
       </div>
       <div class="flex flex-col justify-center items-center text-center gap-10">
-          <h2 class="text-base font-medium uppercase reveal">passionate about creating <br> unforgettable and beautiful <br> digital experiences.</h2>
+          <h2 class="text-base font-medium uppercase reveal">drag to discover</h2>
       </div>
     </div>
 
