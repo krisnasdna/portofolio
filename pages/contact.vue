@@ -5,7 +5,7 @@
     <div class="grid lg:grid-cols-3 grid-cols-1 justify-center items-center h-full lg:mt-10">
       <div class="lg:flex flex-row items-center text-center lg:gap-20 lg:self-end mb-6 justify-start hidden reveal">
         <NuxtLink to="https://www.instagram.com/krisnasdna_" class="text-base underline italic">Instagram</Nuxtlink>
-        <NuxtLink to="instagram.com" class="text-base underline italic">Github</Nuxtlink>
+        <NuxtLink to="https://github.com/krisnasdna" class="text-base underline italic">Github</Nuxtlink>
         <NuxtLink to="instagram.com" class="text-base underline italic">Instagram</Nuxtlink>
         <NuxtLink to="instagram.com" class="text-base underline italic">Instagram</Nuxtlink>
       </div>

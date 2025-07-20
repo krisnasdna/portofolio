@@ -75,9 +75,12 @@ const { data:projects, pending } = await useFetch(`/api/portofolio/${route.param
 
 onMounted(async () => {
   while (pending.value) await new Promise(resolve => setTimeout(resolve, 50))
+  await nextTick()
+  isPageReady.value = true
+  await nextTick()
 
-  await nextTick() 
-  isPageReady.value = true // Baru render konten
+  window.dispatchEvent(new Event('page:ready')) 
+
 
   await nextTick() 
 

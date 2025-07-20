@@ -19,11 +19,11 @@ const { data: items, pending } = await useFetch('/api/portofolio',{server:false}
 
 onMounted(async () => {
   while (pending.value) await new Promise(resolve => setTimeout(resolve, 50))
+  await nextTick()
+  isPageReady.value = true
+  await nextTick()
 
-  await nextTick() 
-  isPageReady.value = true 
-
-  await nextTick() 
+  window.dispatchEvent(new Event('page:ready')) 
 
   $gsap.from('.reveal', {
     autoAlpha: 0,
@@ -33,7 +33,8 @@ onMounted(async () => {
     stagger: 0.3,
     delay: 0.2,
   })
-});
+})
+
 
 </script>
 

@@ -33,8 +33,9 @@ definePageMeta({
  title: 'HOME'
 });
 
-onMounted(()=>{
-  $gsap.from('.reveal',{
+onMounted(() => {
+  window.dispatchEvent(new Event('page:ready'))
+    $gsap.from('.reveal',{
     autoAlpha: 0,
     opacity: 0,
     duration: 1.2,

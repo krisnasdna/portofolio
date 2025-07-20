@@ -22,8 +22,17 @@ router.beforeEach(async (to, from, next) => {
 })
 
 router.afterEach(() => {
-  playOut()
+  const stop = router.afterEach(() => {}) // optional guard
+
+  const handlePageReady = () => {
+    playOut()
+    window.removeEventListener('page:ready', handlePageReady)
+  }
+
+  window.addEventListener('page:ready', handlePageReady)
 })
+
+
 
 function playIn() {
   return new Promise((resolve) => {
