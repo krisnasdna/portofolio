@@ -4,8 +4,8 @@
     <RevealText class="hidden lg:text-[147px] font-[900] text-[#334EAC] uppercase leading-[1.1] lg:leading-none lg:text-center lg:flex flex-row justify-center items-start flex-wrap">Let's make good <span class="flex flex-row justify-center items-start lg:gap-2 gap-1">sh<img src="~/assets/image/icon.png" alt="icon" class="lg:w-10 lg:h-10 lg:mt-2 w-5 h-5 reveal">t together</span> </RevealText>
     <div class="grid lg:grid-cols-3 grid-cols-1 justify-center items-center h-full lg:mt-10">
       <div class="lg:flex flex-row items-center text-center lg:gap-20 lg:self-end mb-6 justify-start hidden reveal">
-        <NuxtLink to="instagram.com" class="text-base underline italic">Instagram</Nuxtlink>
-        <NuxtLink to="instagram.com" class="text-base underline italic">Instagram</Nuxtlink>
+        <NuxtLink to="https://www.instagram.com/krisnasdna_" class="text-base underline italic">Instagram</Nuxtlink>
+        <NuxtLink to="instagram.com" class="text-base underline italic">Github</Nuxtlink>
         <NuxtLink to="instagram.com" class="text-base underline italic">Instagram</Nuxtlink>
         <NuxtLink to="instagram.com" class="text-base underline italic">Instagram</Nuxtlink>
       </div>

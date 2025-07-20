@@ -15,13 +15,13 @@
 const { $gsap } = useNuxtApp()
 const isPageReady = ref(false)
 
-const { data: items, pending } = await useFetch('/api/portofolio')
+const { data: items, pending } = await useFetch('/api/portofolio',{server:false})
 
 onMounted(async () => {
   while (pending.value) await new Promise(resolve => setTimeout(resolve, 50))
 
   await nextTick() 
-  isPageReady.value = true // Baru render konten
+  isPageReady.value = true 
 
   await nextTick() 
 

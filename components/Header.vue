@@ -29,9 +29,9 @@
           <NuxtLink class="text-base font-bold uppercase text-[#334EAC]" to="/contact"  @click="open = !open">Contact</NuxtLink>
         </div>
         <div class="flex gap-3 mt-5">
-          <h6 class="text-sm text-[#334EAC] underline">Instagram</h6>
-          <h6 class="text-sm text-[#334EAC] underline">Instagram</h6>
-          <h6 class="text-sm text-[#334EAC] underline">Instagram</h6>
+          <NuxtLink to="https://www.instagram.com/krisnasdna_" class="text-sm text-[#334EAC] underline">Instagram</NuxtLink>
+          <NuxtLink to="https://github.com/krisnasdna" class="text-sm text-[#334EAC] underline">Github</NuxtLink>
+          <NuxtLink class="text-sm text-[#334EAC] underline">Instagram</NuxtLink>
         </div>
       </div>
     </div>

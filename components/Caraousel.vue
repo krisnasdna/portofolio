@@ -162,10 +162,6 @@ watch(currentIndex, async (i) => {
     goToSlide(1, false)
   }
 })
-
-watchEffect(() => {
-  console.log('Slide width:', getSlideWidth())
-})
 const waitTransition = () => new Promise((r) => setTimeout(r, 310));
 </script>
 
