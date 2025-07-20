@@ -1,11 +1,11 @@
 <template>
-  <div id="smooth-wrapper">
+  <div id="smooth-wrapper" v-if="isPageReady">
     <div id="smooth-content">
       <!-- Mobile Heading -->
       <div class="flex lg:hidden flex-col items-start px-5 gap-10 mt-28">
         <div class="w-full text-center">
           <h1 class="text-3xl font-extrabold text-[#334EAC] uppercase leading-tight">
-            Amed Turtle Snorkeling Trips
+             {{ projects.title }}
           </h1>
         </div>
         <div class="flex justify-between w-full text-sm">
@@ -70,10 +70,17 @@
 <script setup>
 const { $gsap, $ScrollSmoother, $SplitText } = useNuxtApp()
 const route = useRoute()
-const { data:projects, pending } = await useFetch(`/api/portofolio/${route.params.id}`)
+const isPageReady = ref(false)
+const { data:projects, pending } = await useFetch(`/api/portofolio/${route.params.id}`, { server: false })
 
-onMounted(() => {
-  // Init ScrollSmoother
+onMounted(async () => {
+  while (pending.value) await new Promise(resolve => setTimeout(resolve, 50))
+
+  await nextTick() 
+  isPageReady.value = true // Baru render konten
+
+  await nextTick() 
+
   $ScrollSmoother.create({
     wrapper: '#smooth-wrapper',
     content: '#smooth-content',
@@ -81,7 +88,6 @@ onMounted(() => {
     effects: true,
   })
 
-  // Reveal Heading Animations
   const headers = document.querySelectorAll('h1, h2')
   headers.forEach((el) => {
     const split = $SplitText.create(el, { type: 'lines' })
