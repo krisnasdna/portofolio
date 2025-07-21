@@ -74,6 +74,7 @@ const animateTextSequentially = () => {
 
 
 onMounted(async () => {
+  window.dispatchEvent(new Event('page:ready'))
   await nextTick()
   animateTextSequentially()
 })

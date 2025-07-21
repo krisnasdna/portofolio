@@ -22,7 +22,7 @@ router.beforeEach(async (to, from, next) => {
 })
 
 router.afterEach(() => {
-  const stop = router.afterEach(() => {}) // optional guard
+  const stop = router.afterEach(() => {}) 
 
   const handlePageReady = () => {
     playOut()

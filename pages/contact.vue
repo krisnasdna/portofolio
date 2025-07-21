@@ -28,7 +28,8 @@ definePageMeta({
  title: 'CONTACT'
 });
 
-onMounted(()=>{
+onMounted( async ()=>{
+  window.dispatchEvent(new Event('page:ready'))
   $gsap.from('.reveal',{
     autoAlpha: 0,
     opacity: 0,
