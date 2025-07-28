@@ -32,8 +32,6 @@
                 :src="item.cover"
                 format="webp"
                 :alt="item.title"
-                :width="1200"
-                :height="1200"
                 class="object-cover no-drag lg:grayscale lg:hover:grayscale-0"
                 draggable="false"
               />

@@ -8,15 +8,16 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
-model Portfolio {
+model Portofolio {
   id           Int      @id @default(autoincrement())
   title        String
   cover        String
+  description  String[]
   thumbnail    String
-  description  String
   type         String
   services     String[]
   technologies String[]
   year         Int
+  link         String   @default("")
   screenshots  String[]
 }

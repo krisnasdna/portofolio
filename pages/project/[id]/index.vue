@@ -9,14 +9,14 @@
           </h1>
         </div>
         <div class="flex justify-between w-full text-sm">
-          <NuxtLink to="https://amedturtlesnorkeling.com" class="underline">Visit Website</NuxtLink>
+          <NuxtLink :to="projects.link" class="underline">{{ projects.link != '' ? 'Visit Website': 'Hello'}}</NuxtLink>
           <p class="font-bold uppercase text-[#334EAC]">@2025</p>
         </div>
       </div>
 
       <!-- Desktop Heading -->
       <div class="hidden lg:flex justify-between items-end px-5 lg:px-20 pt-[600px]">
-        <NuxtLink to="https://amedturtlesnorkeling.com" class="underline text-base">Visit Website</NuxtLink>
+        <NuxtLink :to="projects.link" class="underline text-base">{{ projects.link != '' ? 'Visit Website': 'Hello'}}</NuxtLink>
         <h1 class="text-[68px] font-extrabold text-[#334EAC] uppercase leading-none text-center">
           {{ projects.title }}
         </h1>
@@ -29,7 +29,7 @@
           :src="projects.thumbnail"
           format="webp"
           alt="Thubmnail"
-          class="w-full h-full object-cover"
+          class="w-full h-full object-cover object-center"
           data-speed="0.5"
         />
       </div>
@@ -38,7 +38,9 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 px-5 lg:px-20 my-20">
         <h2 class="text-2xl lg:text-3xl font-extrabold text-[#334EAC] uppercase">Project Overview</h2>
         <div class="flex flex-col gap-8 text-sm lg:text-base">
-          <p class="text-justify" v-text="projects.description"></p>
+          <div v-for="description in projects.description" :key="description">
+              <p class="text-justify">{{ description }}</p>
+          </div>
           <div class="flex justify-between border-b border-black py-2">
             <h3 class="uppercase font-semibold">Project Type</h3>
             <h3 class="uppercase font-semibold">{{ projects.type }}</h3>
@@ -63,6 +65,15 @@
           class="w-full h-auto object-cover"
         />
       </div>
+      <div class="flex justify-end py-10 px-4 md:px-20">
+        <NuxtLink
+          v-if="nextProjectId"
+          :to="`/project/${nextProjectId}`"
+          class="text-[#334EAC]  font-bold  uppercase text-[68px] lg:text-[230px]"
+        >
+          Next
+        </NuxtLink>
+      </div>
     </div>
   </div>
 </template>
@@ -72,6 +83,17 @@ const { $gsap, $ScrollSmoother, $SplitText } = useNuxtApp()
 const route = useRoute()
 const isPageReady = ref(false)
 const { data:projects, pending } = await useFetch(`/api/portofolio/${route.params.id}`, { server: false })
+const { data: projectsList } = await useFetch('/api/portofolio')
+
+const currentIndex = computed(() => {
+  return projectsList.value?.findIndex(p => p.id === Number(route.params.id))
+})
+
+const nextProjectId = computed(() => {
+  if (!projectsList.value?.length) return null
+  const nextIndex = (currentIndex.value + 1) % projectsList.value.length
+  return projectsList.value[nextIndex]?.id || null
+})
 
 onMounted(async () => {
   while (pending.value) await new Promise(resolve => setTimeout(resolve, 50))
@@ -80,7 +102,6 @@ onMounted(async () => {
   await nextTick()
 
   window.dispatchEvent(new Event('page:ready')) 
-
 
   await nextTick() 
 
@@ -114,7 +135,7 @@ onMounted(async () => {
 #smooth-wrapper {
   height: 100%;
   overflow: hidden;
-  position: fixed;
+  position: relative;
   width: 100%;
   top: 0;
   left: 0;
@@ -122,5 +143,6 @@ onMounted(async () => {
 }
 #smooth-content {
   will-change: transform;
+  padding-bottom: 80px;
 }
 </style>

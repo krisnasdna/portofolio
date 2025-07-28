@@ -1,6 +1,9 @@
-import  prisma  from '~/lib/prisma'
+import prisma from "~/lib/prisma"
+
 
 export default defineEventHandler(async () => {
-  const projects = await prisma.portfolio.findMany()
-  return projects
+  const project = await prisma.portofolio.findMany({
+      orderBy: { id: 'asc' }
+  })
+  return project
 })
