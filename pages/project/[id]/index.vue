@@ -1,7 +1,7 @@
 <template>
   <div id="smooth-wrapper" v-if="isPageReady">
     <div id="smooth-content">
-      <!-- Mobile Heading -->
+
       <div class="flex lg:hidden flex-col items-start px-5 gap-10 mt-28">
         <div class="w-full text-center">
           <h1 class="text-3xl font-extrabold text-[#334EAC] uppercase leading-tight">
@@ -14,7 +14,6 @@
         </div>
       </div>
 
-      <!-- Desktop Heading -->
       <div class="hidden lg:flex justify-between items-end px-5 lg:px-20 pt-[600px]">
         <NuxtLink :to="projects.link" class="underline text-base">{{ projects.link != '' ? 'Visit Website': 'Hello'}}</NuxtLink>
         <h1 class="text-[68px] font-extrabold text-[#334EAC] uppercase leading-none text-center">
@@ -23,7 +22,6 @@
         <p class="font-bold uppercase text-[#334EAC] text-base">@{{ projects.year }}</p>
       </div>
 
-      <!-- Parallax Hero Image -->
       <div class="relative w-full h-screen overflow-hidden my-10">
         <NuxtImg
           :src="projects.thumbnail"
@@ -34,7 +32,7 @@
         />
       </div>
 
-      <!-- Project Overview -->
+
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 px-5 lg:px-20 my-20">
         <h2 class="text-2xl lg:text-3xl font-extrabold text-[#334EAC] uppercase">Project Overview</h2>
         <div class="flex flex-col gap-8 text-sm lg:text-base">
@@ -143,6 +141,5 @@ onMounted(async () => {
 }
 #smooth-content {
   will-change: transform;
-  padding-bottom: 80px;
 }
 </style>
