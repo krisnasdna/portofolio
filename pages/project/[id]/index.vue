@@ -60,7 +60,7 @@
           :src="result"
           format="webp"
           alt="Result"
-          class="w-full h-auto object-cover"
+          class="w-full h-full object-contain"
         />
       </div>
       <div class="flex justify-end py-10 px-4 md:px-20">

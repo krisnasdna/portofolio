@@ -46,7 +46,8 @@ const animateTextSequentially = () => {
     const tl = $gsap.timeline({
       scrollTrigger: {
         trigger: animatedText1.value,
-        start: 'top 90%',
+        start: 'top bottom',
+        once: true,
         toggleActions: 'play none none none',
       },
     })
