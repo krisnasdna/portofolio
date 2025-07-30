@@ -31,7 +31,7 @@
         <div class="flex gap-3 mt-5">
           <NuxtLink to="https://www.instagram.com/krisnasdna_" class="text-sm text-[#334EAC] underline">Instagram</NuxtLink>
           <NuxtLink to="https://github.com/krisnasdna" class="text-sm text-[#334EAC] underline">Github</NuxtLink>
-          <NuxtLink to="" class="text-sm text-[#334EAC] underline">Dribble</NuxtLink>
+          <NuxtLink to=" https://dribbble.com/Krisnasdna_" class="text-sm text-[#334EAC] underline">Dribble</NuxtLink>
         </div>
       </div>
     </div>
