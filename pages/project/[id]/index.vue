@@ -9,7 +9,8 @@
           </h1>
         </div>
         <div class="flex justify-between w-full text-sm">
-          <NuxtLink :to="projects.link" class="underline">{{ projects.link != '' ? 'Visit Website': 'Hello'}}</NuxtLink>
+          <NuxtLink :to="projects.link" class="underline" v-if="projects.link != ''">Visit Website</NuxtLink>
+          <NuxtLink v-else>No Live Link</NuxtLink>
           <p class="font-bold uppercase text-[#334EAC]">@2025</p>
         </div>
       </div>
