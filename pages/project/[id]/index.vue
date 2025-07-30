@@ -16,7 +16,8 @@
       </div>
 
       <div class="hidden lg:flex justify-between items-end px-5 lg:px-20 pt-[600px]">
-        <NuxtLink :to="projects.link" class="underline text-base">{{ projects.link != '' ? 'Visit Website': 'Hello'}}</NuxtLink>
+          <NuxtLink :to="projects.link" class="underline" v-if="projects.link != ''">Visit Website</NuxtLink>
+          <NuxtLink v-else>No Live Link</NuxtLink>
         <h1 class="text-[68px] font-extrabold text-[#334EAC] uppercase leading-none text-center">
           {{ projects.title }}
         </h1>
