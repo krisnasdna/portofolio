@@ -27,12 +27,12 @@
             :key="index"
             class="min-w-full lg:flex-shrink-0 flex justify-center items-center text-3xl font-bold spect-square w-full h-full"
           >
-          <NuxtLink class="no-drag cursor-pointer" draggable="false"  @click.prevent="hasDragged ? null : navigateTo(`/project/${item.id}`)"> 
+          <NuxtLink class="no-drag cursor-pointer h-full aspect " draggable="false"  @click.prevent="hasDragged ? null : navigateTo(`/project/${item.id}`)"> 
              <NuxtImg
                 :src="item.cover"
                 format="webp"
                 :alt="item.title"
-                class="object-cover no-drag lg:grayscale lg:hover:grayscale-0"
+                class="object-cover no-drag lg:grayscale lg:hover:grayscale-0  "
                 draggable="false"
               />
           </NuxtLink>

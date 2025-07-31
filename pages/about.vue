@@ -7,8 +7,8 @@
         <img src="~/assets/image/karakter.gif" alt="icon">
       </div>
       <div class="flex flex-col gap-10 w-full ">
-          <h2 class="lg:text-[28px] text-base italic font-medium text-[#334EAC] text-justify lg:leading-[1.2]" ref="animatedText1">Hi, I'm Krisna — a tech enthusiast with a passion for front-end development and web design. I recently graduated with a degree in Information Technology, and now I spend most of my time turning ideas into engaging web experiences. I work mainly with Vue.js, Nuxt.js, and Laravel, designing interfaces in Figma to create modern websites.</h2>
-          <h2 class="lg:text-[28px] text-base italic font-medium text-[#334EAC] text-justify lg:leading-[1.2]" ref="animatedText2">Outside of design and development, I've been experimenting with AI and IoT lately — just to see how far I can push my creativity with new tech. When I'm not building or learning something new, you'll probably find me in the middle of a gaming session or vibing to music.</h2>
+          <h2 class="lg:text-[28px] text-base italic font-medium text-[#334EAC] text-justify lg:leading-[1.2] inline-block" >Hi, I'm Krisna — a tech enthusiast with a passion for front-end development and web design. I recently graduated with a degree in Information Technology, and now I spend most of my time turning ideas into engaging web experiences. I work mainly with Vue.js, Nuxt.js, and Laravel, designing interfaces in Figma to create modern websites.</h2>
+          <h2 class="lg:text-[28px] text-base italic font-medium text-[#334EAC] text-justify lg:leading-[1.2] inline-block" >Outside of design and development, I've been experimenting with AI and IoT lately — just to see how far I can push my creativity with new tech. When I'm not building or learning something new, you'll probably find me in the middle of a gaming session or vibing to music.</h2>
       </div>
     </div>
   </div>
