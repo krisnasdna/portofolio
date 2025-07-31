@@ -43,12 +43,14 @@
           </div>
           <div class="flex justify-between border-b border-black py-2">
             <h3 class="uppercase font-semibold">Project Type</h3>
-            <h3 class="uppercase font-semibold">{{ projects.type }}</h3>
+             <div class="text-right flex flex-col gap-4">
+              <p class="uppercase font-semibold" v-for="(service, index ) in projects.services" :key="index">{{ service }}</p>
+            </div>
           </div>
           <div class="flex justify-between border-b border-black py-2">
-            <h3 class="uppercase font-semibold">Service</h3>
+            <h3 class="uppercase font-semibold">Tech</h3>
             <div class="text-right flex flex-col gap-4">
-              <p class="uppercase font-semibold" v-for="(service, index ) in projects.services" :key="index">{{ service }}</p>
+              <p class="uppercase font-semibold" v-for="(tech, index ) in projects.technologies" :key="tech">{{ tech }}</p>
             </div>
           </div>
           <div class="flex justify-between border-b border-black py-2">

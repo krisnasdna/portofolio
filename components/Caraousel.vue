@@ -40,7 +40,7 @@
         </div>
       </div>
       <div class="flex flex-col justify-center items-center text-center gap-10">
-          <h2 class="text-base font-medium uppercase reveal">drag to discover</h2>
+          <h2 class="text-base font-medium uppercase reveal">swipe or drag <br> to discover</h2>
       </div>
     </div>
 
