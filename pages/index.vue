@@ -13,7 +13,7 @@
           Krisna (he/him) is an FronT-End <br> Developer & Web Designer from <br>indonesia
         </h2>
       </div>
-      <div class="justify-self-center pt-20 lg:pt-40 reveal">
+      <div class="justify-self-center pt-20 lg:pt-10 reveal">
         <img src="~/assets/image/karakter.gif" alt="icon">
       </div>
       <div class="flex flex-col justify-center items-center text-center gap-10 row-start-2 mt-6 lg:mt-0 lg:row-start-auto reveal">
