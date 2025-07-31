@@ -2,8 +2,8 @@
   <div class="mx-5 lg:mx-[80px] my-0 lg:overflow-hidden max-h-screen" v-if="isPageReady">
     <div class="flex flex-col lg:flex-row justify-center items-center lg:items-start">
       <client-only>
-        <RevealText class="text-[68px] md:text-[73px] lg:text-[132px] 2xl:text-[230px] font-[900] text-[#334EAC] uppercase leading-none text-center"><span class="block lg:inline">My</span></RevealText>
-        <RevealText class="text-[68px] md:text-[73px] lg:text-[132px] 2xl:text-[230px] font-[900] text-[#334EAC] uppercase leading-none text-center"><span class="block lg:inline">Project</span></RevealText>
+        <RevealText class="text-[68px] md:text-[73px] lg:text-[132px] 2xl:text-[185px] font-[900] text-[#334EAC] uppercase leading-none text-center"><span class="block lg:inline">My</span></RevealText>
+        <RevealText class="text-[68px] md:text-[73px] lg:text-[132px] 2xl:text-[185px] font-[900] text-[#334EAC] uppercase leading-none text-center"><span class="block lg:inline">Project</span></RevealText>
       </client-only>
     </div>
     <div v-if="pending">Loading...</div>
