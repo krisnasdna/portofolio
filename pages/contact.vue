@@ -13,7 +13,7 @@
           <NuxtLink to="mailto:krisnasedana2402@gmail.com?subject=Hello" class=" text-white lg:text-[28px] text-base font-semibold bg-[#334EAC] px-10 py-3 rounded-xl uppercase">Let's Talk</NuxtLink>
         </div>
       </div> 
-      <div class="justify-self-center lg:justify-self-end lg:mt-16 mt-20 reveal">
+      <div class="justify-self-center lg:justify-self-end lg:mt-16 mt-10 reveal">
         <img src="~/assets/image/karakter2.png" alt="icon">
       </div>
     </div>
