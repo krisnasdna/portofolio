@@ -1,6 +1,6 @@
 <template>
   <div class="mx-5 lg:mx-[80px] my-0">
-    <RevealText class="text-[42px] lg:text-[132px] 2xl:text-[230px] font-[900] text-[#334EAC] uppercase leading-none text-center md:text-[70px] lg:text-start">Want to know more?</RevealText>
+    <RevealText class="text-[42px] lg:text-[132px] 2xl:text-[180px] font-[900] text-[#334EAC] uppercase leading-none text-center md:text-[70px] lg:text-start">Want to know more?</RevealText>
     <h2 class="lg:text-[28px] text-base font-semibold uppercase text-center lg:mt-60 mt-20 reveal">Let me take you behind the code.</h2>
     <div class="grid lg:grid-cols-2 grid-cols-1 justify-start lg:mt-60 mt-20">
       <div class="justify-self-center lg:justify-self-start row-start-2 lg:row-start-auto mt-16">

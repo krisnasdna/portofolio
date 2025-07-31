@@ -1,8 +1,8 @@
 <template>
   <div class="mx-5 lg:mx-[80px] my-0 lg:overflow-hidden ">
      <div class="flex flex-col md:flex-row justify-center items-center lg:items-start gap-2">
-        <RevealText class="text-[68px] md:text-[73px] lg:text-[100px] 2xl:text-[185px] font-[900] text-[#334EAC] uppercase leading-none text-center"><span class="block lg:inline">Krisna</span></RevealText>
-        <RevealText class="text-[68px] md:text-[73px] lg:text-[100px] 2xl:text-[185px] font-[900] text-[#334EAC] uppercase leading-none text-center"><span class="block lg:inline">Sedana</span></RevealText>
+        <RevealText class="text-[68px] md:text-[73px] lg:text-[100px] 2xl:text-[180px] font-[900] text-[#334EAC] uppercase leading-none text-center"><span class="block lg:inline">Krisna</span></RevealText>
+        <RevealText class="text-[68px] md:text-[73px] lg:text-[100px] 2xl:text-[180px] font-[900] text-[#334EAC] uppercase leading-none text-center"><span class="block lg:inline">Sedana</span></RevealText>
     </div>
     <div class="grid lg:grid-cols-3 grid-cols-1 justify-center items-center h-full mt-10 ">
       <div class="flex flex-col justify-center items-center text-center gap-10 reveal">
